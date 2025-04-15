@@ -1,0 +1,6 @@
+{
+    "chat.agent.enabled": true,
+    "files.associations": {
+        "stdio.h": "c"
+    }
+}
