@@ -3,5 +3,8 @@
     "files.associations": {
         "stdio.h": "c",
         "stdlib.h": "c"
-    }
+    },
+    "cSpell.words": [
+        "subproject"
+    ]
 }
