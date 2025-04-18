@@ -1,13 +1,16 @@
-# C Programming Tutorial
+C Programming Tutorial
+======================
 
-## Table of Contents
+Table of Contents
+-----------------
 
 - [Getting Started](#getting-started)
 - [Basic Syntax](#basic-syntax)
 - [Data Types](#data-types)
 - [Control Structures](#control-structures)
 
-## Getting Started
+Getting Started
+---------------
 
 ### Setting Up Your Environment
 
@@ -28,7 +31,8 @@ int main() {
 }
 ```
 
-## Basic Syntax
+Basic Syntax
+------------
 
 ### Variables
 
@@ -46,7 +50,8 @@ int add(int a, int b) {
 }
 ```
 
-## Data Types
+Data Types
+----------
 
 Common data types in C:
 
@@ -61,7 +66,8 @@ Common data types in C:
 | long      |           8 | Long integer                      | -9223372036854775808 to 9223372036854775807 |
 | unsigned  |           4 | Non-negative integer              | 0 to 4294967295                             |
 
-## Control Structures
+Control Structures
+------------------
 
 ### If Statement
 
@@ -88,3 +94,30 @@ while (condition) {
     // loop body
 }
 ```
+
+Size of `struct`
+----------------
+
+The size of a struct in C is computed based on several rules:
+
+1. Padding: The compiler adds padding between members to ensure proper alignment
+   for each data type. This is why the total size might be larger than the sum
+   of its members' sizes.
+
+2. Alignment: Each data type has an alignment requirement (usually equal to its
+   size). The struct's members must be aligned to their natural boundaries for
+   efficient memory access.
+
+3. Struct Alignment: The entire struct is padded at the end if necessary so its
+   total size is a multiple of its largest member's alignment requirement.
+
+Notes
+-----
+
+```c
+for (unsigned char i = 0; i <= 255; i++)
+```
+
+This creates an infinite loop because i is an unsigned char which can only hold
+values from 0 to 255. When i reaches 255 and tries to increment to 256, it wraps
+around to 0 due to overflow, making the condition i <= 255 always true.
