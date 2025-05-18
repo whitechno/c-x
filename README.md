@@ -6,6 +6,8 @@ A workspace for C programming experiments and learning.
 Code formatting
 ---------------
 
+### `clang-format`
+
 [ClangFormat](https://clang.llvm.org/docs/ClangFormat.html)
 
 On macOS, you can install clang-format using Homebrew. However, VS Code's C/C++
@@ -27,6 +29,16 @@ I really like this section: [Use Early Exits and `continue` to Simplify Code](
 https://llvm.org/docs/CodingStandards.html#use-early-exits-and-continue-to-simplify-code
 )
 
+### `indent`
+
+Using linux `indent` command:
+
+```text
+format:
+ indent -linux $(PATHS)*.c $(PATHS)*.h $(PATHT)*.c
+ $(CLEANUP) $(PATHS)*~ $(PATHS)*~ $(PATHT)*~
+```
+
 VS Code setup
 -------------
 
@@ -46,6 +58,13 @@ https://code.visualstudio.com/docs/cpp/cpp-ide
 https://code.visualstudio.com/docs/cpp/customize-default-settings-cpp
 ).
 
+You can format an entire file with Format Document (⇧⌥F) or just the current
+selection with Format Selection (⌘K ⌘F) in right-click context menu.
+
+See [Formatting](
+https://code.visualstudio.com/docs/editing/codebasics#_formatting
+).
+
 The Visual Studio style is similar to:
 
 ```yaml
@@ -63,6 +82,8 @@ FixNamespaceComments: false
 ```
 
 ### Markdown lint
+
+<!-- #region -->
 
 [markdownlint by David Anson](
 https://marketplace.visualstudio.com/items/?itemName=DavidAnson.vscode-markdownlint
@@ -91,6 +112,8 @@ Add in `~/Library/Application Support/Code/User/settings.json`:
         }
     },
 ```
+
+<!-- #endregion -->
 
 VS Code March 2025 new features
 -------------------------------

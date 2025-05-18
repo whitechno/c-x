@@ -14,7 +14,7 @@ int main() {
 }
 ```
 
-```text
+```shell
 gcc -o hellogcc hellogcc.c
 ```
 
@@ -35,7 +35,7 @@ automatically in simple use-cases.
 
 When running GCC, use the -v option to see each step in detail.
 
-```text
+```shell
 gcc -v -o hellogcc hellogcc.c
 ```
 
@@ -44,7 +44,7 @@ circumstances, you don't need GCC to go through all the steps.
 
 First, start the pre-processor, redirecting its output to `hellogcc.i`:
 
-```text
+```shell
 $ gcc -E hellogcc.c > hellogcc.i
 
 $ ls
@@ -57,7 +57,7 @@ headers and expanded the macros.
 Now you can compile the code into assembly. Use the `-S` option to set GCC just
 to produce assembly code.
 
-```text
+```shell
 $ gcc -S hellogcc.c
 or
 $ gcc -S hellogcc.i
@@ -103,13 +103,13 @@ L_.str:                                 ## @.str
 
 To generate assembly code with clang in Intel syntax:
 
-```text
+```shell
 gcc -S -masm=intel hellogcc.c
 ```
 
 Use the assembly code you've just generated to create an object file:
 
-```text
+```shell
 $ as -o hellogcc.o hellogcc.s
 or
 $ gcc -c hellogcc.c
@@ -122,13 +122,13 @@ hellogcc.c  hellogcc.i  hellogcc.o  hellogcc.s
 
 And finally, linking:
 
-```text
+```shell
 gcc -o hellogcc hellogcc.o
 ```
 
 All four in one command:
 
-```text
+```shell
 gcc -save-temps -o hellogcc hellogcc.c
 ```
 
@@ -136,7 +136,7 @@ gcc -save-temps -o hellogcc hellogcc.c
 
 Use the `file` utility to determine the type of file:
 
-```text
+```shell
 $ file hellogcc.c
 hellogcc.c: c program text, ASCII text
 
@@ -149,7 +149,7 @@ hellogcc: Mach-O 64-bit executable x86_64
 
 Use the `nm` utility to list symbol tables for object files:
 
-```text
+```shell
 $ nm hellogcc.o
 0000000000000000 T _main
                  U _printf
