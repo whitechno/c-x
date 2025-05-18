@@ -97,7 +97,7 @@ $(PATHR):
 # The `2>&1` part redirects the standard error (file descriptor 2)
 # to the same place as standard output (file descriptor 1),
 # so that both the output and error messages are captured in the same file.
-# The choice between using - or || true is mostly a matter of style:
+# The choice between using `-` or `|| true` is mostly a matter of style:
 #   `|| true` is more explicit about what we're doing - ignoring failures
 #   `-` is more concise but less obvious about its purpose
 # However, we don't need to ignore errors in our case, because our tests
